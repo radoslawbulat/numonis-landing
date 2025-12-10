@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numonis - Coming Soon</title>
+    <meta name="description" content="Numonis - Coming Soon. For inquiries contact hello@numonis.com">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            background-color: #F6F6F6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        main {
+            text-align: center;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .logo {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: #040404;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        a {
+            color: #797E5D;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #040404;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                max-width: 220px;
+            }
+
+            h1 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <img src="numonis.svg" alt="Numonis" class="logo">
+        <h1>Coming Soon</h1>
+        <p>Inquiries <a href="mailto:hello@numonis.com">hello@numonis.com</a></p>
+    </main>
+</body>
+</html>
