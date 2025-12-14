@@ -1,0 +1,134 @@
+---
+import { useTranslations } from '../i18n/translations';
+
+interface Props {
+  lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const navLinks = [
+  { href: '#services', label: t('nav.services') },
+  { href: '#about', label: t('nav.about') },
+  { href: '#locations', label: t('nav.contact') },
+];
+
+const homePath = lang === 'es' ? '/es/' : '/';
+const switchLangPath = lang === 'es' ? '/' : '/es/';
+const switchLangLabel = lang === 'es' ? 'English' : 'Español';
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 bg-cream/80 backdrop-blur-md border-b border-black/5">
+  <div class="container">
+    <nav class="flex items-center justify-between h-16 md:h-20 relative">
+      <!-- Logo -->
+      <a href={homePath} class="flex items-center">
+        <img src="/numonis.svg" alt="Numonis" class="h-8 md:h-10 w-auto" />
+      </a>
+
+      <!-- Desktop Navigation (centered) -->
+      <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Buttons & Language Switcher -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href={switchLangPath} class="flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-900 transition-colors px-2 py-1 rounded-md hover:bg-neutral-100" title={switchLangLabel}>
+          {lang === 'es' ? (
+            <!-- UK Flag -->
+            <svg class="w-5 h-4 rounded-sm shadow-sm" viewBox="0 0 60 40" fill="none">
+              <rect width="60" height="40" fill="#012169"/>
+              <path d="M0 0L60 40M60 0L0 40" stroke="white" stroke-width="6"/>
+              <path d="M0 0L60 40M60 0L0 40" stroke="#C8102E" stroke-width="4"/>
+              <path d="M30 0V40M0 20H60" stroke="white" stroke-width="10"/>
+              <path d="M30 0V40M0 20H60" stroke="#C8102E" stroke-width="6"/>
+            </svg>
+          ) : (
+            <!-- Spain Flag -->
+            <svg class="w-5 h-4 rounded-sm shadow-sm" viewBox="0 0 60 40" fill="none">
+              <rect width="60" height="10" fill="#AA151B"/>
+              <rect y="10" width="60" height="20" fill="#F1BF00"/>
+              <rect y="30" width="60" height="10" fill="#AA151B"/>
+            </svg>
+          )}
+        </a>
+        <a href="#demo" class="btn btn-primary text-sm">
+          {t('nav.scheduleDemo')}
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        type="button"
+        class="md:hidden p-2 -mr-2 text-neutral-600 hover:text-neutral-900"
+        aria-label="Open menu"
+        id="mobile-menu-button"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-black/5">
+    <div class="container py-4 space-y-4">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="block text-base font-medium text-neutral-600 hover:text-neutral-900 transition-colors py-2"
+        >
+          {link.label}
+        </a>
+      ))}
+      <div class="pt-4 space-y-3 border-t border-black/5">
+        <a href={switchLangPath} class="flex items-center justify-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors py-2">
+          {lang === 'es' ? (
+            <svg class="w-5 h-4 rounded-sm shadow-sm" viewBox="0 0 60 40" fill="none">
+              <rect width="60" height="40" fill="#012169"/>
+              <path d="M0 0L60 40M60 0L0 40" stroke="white" stroke-width="6"/>
+              <path d="M0 0L60 40M60 0L0 40" stroke="#C8102E" stroke-width="4"/>
+              <path d="M30 0V40M0 20H60" stroke="white" stroke-width="10"/>
+              <path d="M30 0V40M0 20H60" stroke="#C8102E" stroke-width="6"/>
+            </svg>
+          ) : (
+            <svg class="w-5 h-4 rounded-sm shadow-sm" viewBox="0 0 60 40" fill="none">
+              <rect width="60" height="10" fill="#AA151B"/>
+              <rect y="10" width="60" height="20" fill="#F1BF00"/>
+              <rect y="30" width="60" height="10" fill="#AA151B"/>
+            </svg>
+          )}
+          {switchLangLabel}
+        </a>
+        <a href="#demo" class="btn btn-primary w-full text-sm">
+          {t('nav.scheduleDemo')}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking a link
+  mobileMenu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

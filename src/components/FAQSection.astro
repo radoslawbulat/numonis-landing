@@ -1,0 +1,144 @@
+---
+import { useTranslations } from '../i18n/translations';
+
+interface Props {
+  lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const faqs = [
+  { question: t('faq.q1'), answer: t('faq.a1') },
+  { question: t('faq.q2'), answer: t('faq.a2') },
+  { question: t('faq.q3'), answer: t('faq.a3') },
+  { question: t('faq.q4'), answer: t('faq.a4') },
+  { question: t('faq.q5'), answer: t('faq.a5') },
+  { question: t('faq.q6'), answer: t('faq.a6') },
+];
+---
+
+<section id="faq" class="section bg-white">
+  <div class="container">
+    <!-- Section header -->
+    <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+      <span class="inline-block text-sm font-medium text-primary-500 uppercase tracking-wider mb-4">
+        {t('faq.label')}
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium text-neutral-900 mb-6">
+        {t('faq.title')}
+      </h2>
+      <p class="text-lg text-neutral-600">
+        {t('faq.subtitle')}
+      </p>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="max-w-3xl mx-auto">
+      <div class="space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="faq-item border border-neutral-200 rounded-xl overflow-hidden">
+            <button
+              type="button"
+              class="faq-trigger w-full flex items-center justify-between gap-4 p-5 md:p-6 text-left bg-white hover:bg-neutral-50 transition-colors"
+              aria-expanded="false"
+              data-faq-index={index}
+            >
+              <span class="text-base md:text-lg font-medium text-neutral-900">
+                {faq.question}
+              </span>
+              <span class="faq-icon flex-shrink-0 w-6 h-6 rounded-full bg-primary-50 flex items-center justify-center transition-transform duration-200">
+                <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v12M6 12h12" />
+                </svg>
+              </span>
+            </button>
+            <div class="faq-content hidden">
+              <div class="px-5 md:px-6 pb-5 md:pb-6">
+                <p class="text-neutral-600 leading-relaxed">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Contact prompt -->
+      <div class="mt-12 text-center p-8 bg-cream rounded-2xl">
+        <p class="text-neutral-700">
+          {t('faq.stillQuestions')} {t('faq.contactUs')}{' '}
+          <a href="mailto:hello@numonis.com" class="text-primary-600 hover:text-primary-700 font-medium">
+            hello@numonis.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+
+    faqTriggers.forEach(function(trigger) {
+      trigger.addEventListener('click', function() {
+        const faqItem = this.closest('.faq-item');
+        const content = faqItem.querySelector('.faq-content');
+        const icon = faqItem.querySelector('.faq-icon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+        // Close all other FAQs
+        faqTriggers.forEach(function(otherTrigger) {
+          if (otherTrigger !== trigger) {
+            const otherItem = otherTrigger.closest('.faq-item');
+            const otherContent = otherItem.querySelector('.faq-content');
+            const otherIcon = otherItem.querySelector('.faq-icon');
+            otherTrigger.setAttribute('aria-expanded', 'false');
+            otherContent.classList.add('hidden');
+            otherIcon.classList.remove('rotate-45');
+            otherItem.classList.remove('border-primary-300', 'bg-primary-50/30');
+            otherItem.classList.add('border-neutral-200');
+          }
+        });
+
+        // Toggle current FAQ
+        if (isExpanded) {
+          this.setAttribute('aria-expanded', 'false');
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-45');
+          faqItem.classList.remove('border-primary-300', 'bg-primary-50/30');
+          faqItem.classList.add('border-neutral-200');
+        } else {
+          this.setAttribute('aria-expanded', 'true');
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-45');
+          faqItem.classList.remove('border-neutral-200');
+          faqItem.classList.add('border-primary-300', 'bg-primary-50/30');
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .faq-icon {
+    transition: transform 0.2s ease-out;
+  }
+  .faq-icon.rotate-45 {
+    transform: rotate(45deg);
+  }
+  .faq-content {
+    animation: slideDown 0.2s ease-out;
+  }
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

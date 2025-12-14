@@ -1,0 +1,68 @@
+---
+import { useTranslations } from '../i18n/translations';
+
+interface Props {
+  lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section id="demo" class="relative py-20 md:py-28 lg:py-32 overflow-hidden">
+  <!-- Background image -->
+  <div class="absolute inset-0">
+    <img
+      src="/background.png"
+      alt=""
+      class="w-full h-full object-cover"
+    />
+    <!-- Overlay for better text readability -->
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+
+  <div class="container relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <!-- Main headline -->
+      <h2 class="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-white mb-6">
+        {t('cta.headline')}
+      </h2>
+
+      <!-- Subtext -->
+      <p class="text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+        {t('cta.subheadline')}
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#"
+          class="inline-flex items-center justify-center px-8 py-4 text-base font-medium bg-white text-neutral-900 rounded-lg hover:bg-neutral-100 transition-colors w-full sm:w-auto"
+        >
+          {t('cta.scheduleDemo')}
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+        <a
+          href="mailto:hello@numonis.com"
+          class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border border-white/40 rounded-lg hover:bg-white/10 transition-colors w-full sm:w-auto"
+        >
+          {t('cta.talkToExpert')}
+        </a>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="mt-12 pt-8 border-t border-white/20">
+        <p class="text-sm text-white/70 mb-4">{t('cta.trustedBy')}</p>
+        <div class="flex items-center justify-center gap-6 text-white/60">
+          <span class="text-sm">{t('cta.globalStandards')}</span>
+          <span>•</span>
+          <span class="text-sm">{t('cta.localPresence')}</span>
+          <span>•</span>
+          <span class="text-sm">{t('cta.digital')}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

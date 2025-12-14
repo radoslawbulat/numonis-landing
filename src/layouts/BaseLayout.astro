@@ -1,0 +1,62 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  lang?: 'en' | 'es';
+}
+
+const {
+  title,
+  description = "Numonis - Providing European SMEs with tools & intelligence that transform accounting operations into a strategic driver.",
+  lang = 'en'
+} = Astro.props;
+
+const descriptionByLang = {
+  en: description,
+  es: "Numonis - Proporcionando a las PYMEs europeas herramientas e inteligencia que transforman las operaciones contables en un motor estratégico."
+};
+
+const finalDescription = lang === 'es' ? descriptionByLang.es : descriptionByLang.en;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://numonis.com/">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content="https://numonis.com/web-app-manifest-512x512.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content="https://numonis.com/web-app-manifest-512x512.png">
+
+  <!-- Additional SEO -->
+  <link rel="canonical" href="https://numonis.com/">
+  <meta name="theme-color" content="#797E5D">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="min-h-screen">
+  <slot />
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

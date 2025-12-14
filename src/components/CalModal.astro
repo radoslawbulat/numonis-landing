@@ -1,0 +1,123 @@
+---
+interface Props {
+  lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+const buttonText = lang === 'es' ? 'Cerrar' : 'Close';
+---
+
+<!-- Cal.com Modal -->
+<div id="cal-modal" class="fixed inset-0 z-[100] hidden">
+  <!-- Backdrop -->
+  <div id="cal-modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+  <!-- Modal Content -->
+  <div class="absolute inset-4 md:inset-8 lg:inset-12 flex items-center justify-center">
+    <div class="relative w-full max-w-4xl h-full max-h-[700px] bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+      <!-- Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-neutral-200">
+        <h3 class="text-lg font-medium text-neutral-900">
+          {lang === 'es' ? 'Agenda una demo' : 'Schedule a demo'}
+        </h3>
+        <button
+          id="cal-modal-close"
+          type="button"
+          class="p-2 -mr-2 text-neutral-400 hover:text-neutral-600 transition-colors rounded-lg hover:bg-neutral-100"
+          aria-label={buttonText}
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Cal.com Embed -->
+      <div class="flex-1 overflow-hidden">
+        <iframe
+          id="cal-iframe"
+          src=""
+          data-src="https://cal.com/vencer/30min?embed=true&theme=light"
+          class="w-full h-full border-0"
+          title="Schedule a demo"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('cal-modal');
+    const backdrop = document.getElementById('cal-modal-backdrop');
+    const closeBtn = document.getElementById('cal-modal-close');
+    const iframe = document.getElementById('cal-iframe');
+
+    // Open modal function
+    function openCalModal(e) {
+      e.preventDefault();
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      // Load iframe only when modal opens (lazy load)
+      if (iframe && !iframe.src) {
+        iframe.src = iframe.dataset.src;
+      }
+    }
+
+    // Close modal function
+    function closeCalModal() {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    // Attach click handlers to all schedule demo buttons/links
+    document.querySelectorAll('[data-cal-trigger], a[href="#demo"]').forEach(function(trigger) {
+      trigger.addEventListener('click', openCalModal);
+    });
+
+    // Close on backdrop click
+    backdrop?.addEventListener('click', closeCalModal);
+
+    // Close on close button click
+    closeBtn?.addEventListener('click', closeCalModal);
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeCalModal();
+      }
+    });
+  });
+</script>
+
+<style>
+  #cal-modal {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  #cal-modal > div:last-child > div {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+</style>
