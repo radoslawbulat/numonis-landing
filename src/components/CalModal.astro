@@ -61,8 +61,9 @@ const buttonText = lang === 'es' ? 'Cerrar' : 'Close';
       document.body.style.overflow = 'hidden';
 
       // Load iframe only when modal opens (lazy load)
-      if (iframe && !iframe.src) {
+      if (iframe && iframe.dataset.src && !iframe.getAttribute('data-loaded')) {
         iframe.src = iframe.dataset.src;
+        iframe.setAttribute('data-loaded', 'true');
       }
     }
 
