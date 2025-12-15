@@ -32,8 +32,8 @@ export const ui = {
     'hero.chat.message4': "You're in great shape! With these deductions, you'll save around €2,400.",
     'hero.chat.message5': 'Amazing, thank you!',
     'hero.chat.chartTitle': 'Q4 Tax Savings Breakdown',
-    'hero.chat.homeOffice': 'Home Office',
-    'hero.chat.equipment': 'Equipment',
+    'hero.chat.homeOffice': 'Equipment',
+    'hero.chat.equipment': 'Travel',
     'hero.chat.software': 'Software',
     'hero.chat.totalSavings': 'Total Savings',
 
@@ -213,8 +213,8 @@ export const ui = {
     'hero.chat.message4': '¡Estás muy bien! Con estas deducciones, ahorrarás alrededor de €2.400.',
     'hero.chat.message5': '¡Increíble, gracias!',
     'hero.chat.chartTitle': 'Desglose de Ahorros Fiscales T4',
-    'hero.chat.homeOffice': 'Oficina Casa',
-    'hero.chat.equipment': 'Equipos',
+    'hero.chat.homeOffice': 'Equipos',
+    'hero.chat.equipment': 'Viajes',
     'hero.chat.software': 'Software',
     'hero.chat.totalSavings': 'Ahorro Total',
 
