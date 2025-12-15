@@ -1,6 +1,5 @@
 /* Google Fonts - must be first */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700;800&display=swap');
 
 @import "tailwindcss";
 
@@ -34,7 +33,7 @@
   --color-cream-dark: #eae7e1;
 
   /* Font families */
-  --font-display: 'Funnel Display', system-ui, sans-serif;
+  --font-display: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 }
 
