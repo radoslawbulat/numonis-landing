@@ -59,7 +59,7 @@ export const ui = {
     // Mission Section
     'mission.label': 'Our Mission',
     'mission.title': 'Leveling the Playing Field',
-    'mission.statement': 'Our mission is to give every small business the tools, intelligence, and partnership they need to transform accounting from a burden into a source of power and possibility.',
+    'mission.statement': 'Give every small business the tools, intelligence, and partnership they need to transform accounting from a burden into a source of power and possibility.',
     'mission.problem': 'Accounting operations often feels like a burden to small businesses. Outdated tools, manual inefficient workflows, never-ending paperwork, data trapped in spreadsheets and hidden behind complexity.',
     'mission.solution': 'We are redesigning the SME accounting operations by:',
     'mission.transforming.title': 'Transforming Collaboration',
