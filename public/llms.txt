@@ -21,7 +21,7 @@ Numonis is a modern accounting services company serving small and medium-sized e
 - Email: porto@numonis.com
 
 ### A Coruna, Spain
-- Address: Calle Real, 45, 15003 A Coruna
+- Address: Avda Linares Rivas, 30 - 11º, 15005 A Coruna
 - Email: coruna@numonis.com
 
 ## Core Services
