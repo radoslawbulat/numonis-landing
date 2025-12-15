@@ -20,7 +20,7 @@ export const ui = {
     'hero.realTimeSupport': '24/7 access',
     'hero.localExpertise': 'Local, sector expertise',
     'hero.digital': '100% digital',
-    'hero.peaceMind': 'Peace of mind, powered by expert accountants and AI technology',
+    'hero.peaceMind': 'Peace of mind, powered by expert accountants and AI technology.',
     'hero.scheduleDemo': 'Schedule a product demo',
     'hero.talkToExpert': 'Talk to an expert',
 
@@ -79,7 +79,7 @@ export const ui = {
     // Locations Section
     'locations.label': 'Find Us',
     'locations.title': 'Local Presence, Global Standards',
-    'locations.description': 'Local presence, global standards. Visit us in one of our offices across Spain.',
+    'locations.description': 'Visit us in one of our offices across Spain and Portugal.',
     'locations.online.title': 'Meet Us Online',
     'locations.online.description': 'Can\'t visit in person? We\'re 100% digital. Schedule a video call with our team from anywhere in the world.',
     'locations.online.cta': 'Schedule a Demo',
