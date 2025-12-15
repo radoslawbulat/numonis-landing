@@ -1,5 +1,12 @@
 ---
+import { useTranslations } from '../i18n/translations';
 
+interface Props {
+  lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section id="problem" class="section bg-cream">
@@ -8,10 +15,10 @@
       <!-- Section header -->
       <div class="text-center mb-12 md:mb-16">
         <span class="inline-block text-sm font-medium text-primary-500 uppercase tracking-wider mb-4">
-          The Problem We're Solving
+          {t('problem.label')}
         </span>
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-medium text-neutral-900 mb-6">
-          Accounting was never designed for small businesses
+          {t('problem.title')}
         </h2>
       </div>
 
@@ -29,10 +36,10 @@
               </div>
               <div>
                 <h3 class="text-lg md:text-xl font-medium text-neutral-900 mb-2">
-                  Accountants are stuck with outdated tools
+                  {t('problem.problem1.title')}
                 </h3>
                 <p class="text-neutral-600">
-                  Legacy software and manual processes slow everything down, creating delays and inefficiencies that hurt your business.
+                  {t('problem.problem1.description')}
                 </p>
               </div>
             </div>
@@ -51,10 +58,10 @@
               </div>
               <div>
                 <h3 class="text-lg md:text-xl font-medium text-neutral-900 mb-2">
-                  Entrepreneurs are buried in paperwork
+                  {t('problem.problem2.title')}
                 </h3>
                 <p class="text-neutral-600">
-                  Instead of focusing on growth, business owners spend countless hours managing documents, receipts, and administrative tasks.
+                  {t('problem.problem2.description')}
                 </p>
               </div>
             </div>
@@ -73,10 +80,10 @@
               </div>
               <div>
                 <h3 class="text-lg md:text-xl font-medium text-neutral-900 mb-2">
-                  Data arrives too late to matter
+                  {t('problem.problem3.title')}
                 </h3>
                 <p class="text-neutral-600">
-                  Financial insights trapped in spreadsheets, delivered late, or hidden behind complexity - by the time you see them, opportunities have passed.
+                  {t('problem.problem3.description')}
                 </p>
               </div>
             </div>
@@ -95,10 +102,10 @@
               </div>
               <div>
                 <h3 class="text-lg md:text-xl font-medium text-neutral-900 mb-2">
-                  Communication breakdowns
+                  {t('problem.problem4.title')}
                 </h3>
                 <p class="text-neutral-600">
-                  The most important relationship in your financial life - with your accountant - is slowed by inefficiencies, miscommunication, and manual work.
+                  {t('problem.problem4.description')}
                 </p>
               </div>
             </div>
@@ -109,8 +116,8 @@
       <!-- Bottom statement -->
       <div class="mt-12 md:mt-16 text-center">
         <p class="text-lg md:text-xl text-neutral-700 font-medium">
-          This keeps owners reactive instead of strategic.<br />
-          <span class="text-neutral-500 font-normal">It turns financial management into stress instead of strength.</span>
+          {t('problem.conclusion.line1')}<br />
+          <span class="text-neutral-500 font-normal">{t('problem.conclusion.line2')}</span>
         </p>
       </div>
     </div>

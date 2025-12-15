@@ -55,11 +55,11 @@ const t = useTranslations(lang);
             </div>
             <!-- Sector expertise tags -->
             <div class="flex flex-wrap justify-center gap-2">
-              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">Retail & Hospitality</span>
-              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">Healthcare</span>
-              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">Tech & SaaS</span>
-              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">Agriculture</span>
-              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">Professional Services</span>
+              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">{t('mockup.sectors.retail')}</span>
+              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">{t('mockup.sectors.healthcare')}</span>
+              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">{t('mockup.sectors.tech')}</span>
+              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">{t('mockup.sectors.agriculture')}</span>
+              <span class="px-3 py-1.5 bg-white rounded-full text-xs font-medium text-neutral-700 shadow-sm">{t('mockup.sectors.professional')}</span>
             </div>
           </div>
         </div>
@@ -89,14 +89,14 @@ const t = useTranslations(lang);
               <div class="flex items-start gap-2">
                 <img src="/images/profile1.png" alt="Accountant" class="w-7 h-7 rounded-full object-cover flex-shrink-0" />
                 <div class="flex-1 bg-white rounded-lg p-2.5 shadow-sm">
-                  <p class="text-xs text-neutral-700">I've reviewed your Q3 financials. VAT return is ready for approval.</p>
+                  <p class="text-xs text-neutral-700">{t('mockup.chat.accountant')}</p>
                   <p class="text-[10px] text-neutral-400 mt-1">10:32 AM</p>
                 </div>
               </div>
               <!-- Chat message from user -->
               <div class="flex items-start gap-2 justify-end">
                 <div class="flex-1 bg-primary-500 rounded-lg p-2.5 shadow-sm max-w-[85%]">
-                  <p class="text-xs text-white">Perfect! I'll review and approve it now.</p>
+                  <p class="text-xs text-white">{t('mockup.chat.user')}</p>
                   <p class="text-[10px] text-primary-200 mt-1">10:35 AM</p>
                 </div>
               </div>
@@ -105,7 +105,7 @@ const t = useTranslations(lang);
                 <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
-                <p class="text-xs text-green-700">VAT Return Q3 approved and submitted</p>
+                <p class="text-xs text-green-700">{t('mockup.chat.notification')}</p>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ const t = useTranslations(lang);
             <div class="grid grid-cols-2 gap-2.5 h-full">
               <!-- Cash Balance -->
               <div class="bg-white rounded-lg p-3 shadow-sm">
-                <p class="text-xs text-neutral-500 mb-1">Cash Balance</p>
+                <p class="text-xs text-neutral-500 mb-1">{t('mockup.metrics.cashBalance')}</p>
                 <p class="text-lg font-semibold text-neutral-900">€428,000</p>
                 <div class="flex items-center gap-1 mt-1">
                   <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -146,7 +146,7 @@ const t = useTranslations(lang);
 
               <!-- Revenue -->
               <div class="bg-white rounded-lg p-3 shadow-sm">
-                <p class="text-xs text-neutral-500 mb-1">Revenue</p>
+                <p class="text-xs text-neutral-500 mb-1">{t('mockup.metrics.revenue')}</p>
                 <p class="text-lg font-semibold text-neutral-900">€245,000</p>
                 <div class="flex items-center gap-1 mt-1">
                   <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -158,7 +158,7 @@ const t = useTranslations(lang);
 
               <!-- Expenses -->
               <div class="bg-white rounded-lg p-3 shadow-sm">
-                <p class="text-xs text-neutral-500 mb-1">Expenses</p>
+                <p class="text-xs text-neutral-500 mb-1">{t('mockup.metrics.expenses')}</p>
                 <p class="text-lg font-semibold text-neutral-900">€182,000</p>
                 <div class="flex items-center gap-1 mt-1">
                   <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -170,7 +170,7 @@ const t = useTranslations(lang);
 
               <!-- Profit/Loss -->
               <div class="bg-white rounded-lg p-3 shadow-sm">
-                <p class="text-xs text-neutral-500 mb-1">Profit/Loss</p>
+                <p class="text-xs text-neutral-500 mb-1">{t('mockup.metrics.profitLoss')}</p>
                 <p class="text-lg font-semibold text-neutral-900">€63,000</p>
                 <div class="flex items-center gap-1 mt-1">
                   <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20">
@@ -241,13 +241,13 @@ const t = useTranslations(lang);
 
               <!-- Benchmark info -->
               <div class="flex-1">
-                <p class="text-xs text-neutral-500 mb-1.5">Benchmarked against</p>
-                <p class="text-sm font-medium text-neutral-700 mb-2">Growth-stage SaaS</p>
+                <p class="text-xs text-neutral-500 mb-1.5">{t('mockup.healthScore.benchmarked')}</p>
+                <p class="text-sm font-medium text-neutral-700 mb-2">{t('mockup.healthScore.category')}</p>
                 <div class="flex items-center gap-1.5">
                   <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                   </svg>
-                  <span class="text-sm font-medium text-green-600">+5 this month</span>
+                  <span class="text-sm font-medium text-green-600">{t('mockup.healthScore.change')}</span>
                 </div>
               </div>
             </div>
@@ -260,7 +260,7 @@ const t = useTranslations(lang);
                     <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z" />
                   </svg>
                   <p class="text-xs text-neutral-700">
-                    <span class="font-medium">Cash runway</span> stronger than 82% of peers
+                    <span class="font-medium">{t('mockup.healthScore.insight1Label')}</span> {t('mockup.healthScore.insight1')}
                   </p>
                 </div>
               </div>
@@ -270,7 +270,7 @@ const t = useTranslations(lang);
                     <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z" />
                   </svg>
                   <p class="text-xs text-neutral-700">
-                    <span class="font-medium">Receivables</span> aging above average - consider follow-up
+                    <span class="font-medium">{t('mockup.healthScore.insight2Label')}</span> {t('mockup.healthScore.insight2')}
                   </p>
                 </div>
               </div>
@@ -306,7 +306,7 @@ const t = useTranslations(lang);
                   </svg>
                 </div>
                 <div class="flex-1 bg-white rounded-lg p-3 shadow-sm">
-                  <p class="text-sm text-neutral-700">"What was my revenue last quarter?"</p>
+                  <p class="text-sm text-neutral-700">"{t('mockup.aiChat.question')}"</p>
                 </div>
               </div>
               <div class="flex items-start gap-3 pl-4">
@@ -316,7 +316,7 @@ const t = useTranslations(lang);
                   </svg>
                 </div>
                 <div class="flex-1 bg-primary-50 rounded-lg p-3">
-                  <p class="text-sm text-neutral-700">Your Q3 revenue was <span class="font-semibold">€127,450</span>, up <span class="text-green-600 font-medium">12%</span> from Q2...</p>
+                  <p class="text-sm text-neutral-700">{t('mockup.aiChat.answer')} <span class="font-semibold">€127,450</span>{t('mockup.aiChat.answerDetail')}</p>
                 </div>
               </div>
             </div>

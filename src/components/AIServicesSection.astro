@@ -1,5 +1,12 @@
 ---
+import { useTranslations } from '../i18n/translations';
 
+interface Props {
+  lang?: 'en' | 'es';
+}
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
 ---
 
 <section class="section bg-cream">
@@ -17,15 +24,15 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
             </div>
-            <span class="text-sm font-medium text-primary-600 uppercase tracking-wider">AI Data Analyst</span>
+            <span class="text-sm font-medium text-primary-600 uppercase tracking-wider">{t('aiServices.analyst.label')}</span>
           </div>
 
           <h3 class="text-2xl md:text-3xl font-medium text-neutral-900 mb-4">
-            Numonis AI - a data analyst in your pocket
+            {t('aiServices.analyst.title')}
           </h3>
 
           <p class="text-neutral-600 mb-6 leading-relaxed">
-            Ask anything, understand everything. 24/7. Smart answers without spreadsheets - get clarity at the speed of a question. Your business data, now in plain English.
+            {t('aiServices.analyst.description')}
           </p>
 
           <!-- Visual element -->
@@ -38,7 +45,7 @@
                   </svg>
                 </div>
                 <div class="flex-1">
-                  <p class="text-sm text-neutral-700 font-medium">"What was my revenue last quarter?"</p>
+                  <p class="text-sm text-neutral-700 font-medium">"{t('mockup.aiChat.question')}"</p>
                 </div>
               </div>
               <div class="flex items-start gap-3 pl-4">
@@ -48,7 +55,7 @@
                   </svg>
                 </div>
                 <div class="flex-1 bg-white rounded-lg p-3 shadow-sm">
-                  <p class="text-sm text-neutral-600">Your Q3 revenue was €127,450, up 12% from Q2...</p>
+                  <p class="text-sm text-neutral-600">{t('mockup.aiChat.answer')} €127,450{t('mockup.aiChat.answerDetail')}</p>
                 </div>
               </div>
             </div>
@@ -68,15 +75,15 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
             </div>
-            <span class="text-sm font-medium text-secondary-600 uppercase tracking-wider">One Stop Service Shop</span>
+            <span class="text-sm font-medium text-secondary-600 uppercase tracking-wider">{t('aiServices.shop.label')}</span>
           </div>
 
           <h3 class="text-2xl md:text-3xl font-medium text-neutral-900 mb-4">
-            All your Business Service Needs - One Trusted Network
+            {t('aiServices.shop.title')}
           </h3>
 
           <p class="text-neutral-600 mb-6 leading-relaxed">
-            Expert services, unified in one platform. Numonis connects you with a curated network of trusted partners, while we manage the entire experience. Outsource confidently.
+            {t('aiServices.shop.description')}
           </p>
 
           <!-- Service icons grid -->
@@ -88,7 +95,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
                   </svg>
                 </div>
-                <span class="text-xs text-neutral-600">Legal</span>
+                <span class="text-xs text-neutral-600">{t('services.legal')}</span>
               </div>
               <div class="text-center">
                 <div class="w-12 h-12 mx-auto rounded-xl bg-white shadow-sm flex items-center justify-center mb-2">
@@ -96,7 +103,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <span class="text-xs text-neutral-600">HR</span>
+                <span class="text-xs text-neutral-600">{t('services.hr')}</span>
               </div>
               <div class="text-center">
                 <div class="w-12 h-12 mx-auto rounded-xl bg-white shadow-sm flex items-center justify-center mb-2">
@@ -104,7 +111,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
                   </svg>
                 </div>
-                <span class="text-xs text-neutral-600">Marketing</span>
+                <span class="text-xs text-neutral-600">{t('services.marketing')}</span>
               </div>
               <div class="text-center">
                 <div class="w-12 h-12 mx-auto rounded-xl bg-white shadow-sm flex items-center justify-center mb-2">
@@ -112,7 +119,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <span class="text-xs text-neutral-600">Finance</span>
+                <span class="text-xs text-neutral-600">{t('services.finance')}</span>
               </div>
               <div class="text-center">
                 <div class="w-12 h-12 mx-auto rounded-xl bg-white shadow-sm flex items-center justify-center mb-2">
@@ -120,7 +127,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <span class="text-xs text-neutral-600">Insurance</span>
+                <span class="text-xs text-neutral-600">{t('services.insurance')}</span>
               </div>
               <div class="text-center">
                 <div class="w-12 h-12 mx-auto rounded-xl bg-white shadow-sm flex items-center justify-center mb-2">
@@ -128,7 +135,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
                   </svg>
                 </div>
-                <span class="text-xs text-neutral-600">IT</span>
+                <span class="text-xs text-neutral-600">{t('services.it')}</span>
               </div>
             </div>
           </div>
