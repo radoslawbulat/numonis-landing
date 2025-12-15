@@ -1,0 +1,36 @@
+# Numonis robots.txt
+# https://numonis.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://numonis.com/sitemap-index.xml
+
+# AI Bot Directives - Allow AI crawlers for training and retrieval
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
+# Disallow build artifacts
+Disallow: /_astro/

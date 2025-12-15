@@ -17,6 +17,228 @@ const descriptionByLang = {
 };
 
 const finalDescription = lang === 'es' ? descriptionByLang.es : descriptionByLang.en;
+
+// URL configuration
+const siteUrl = 'https://numonis.com';
+const canonicalUrl = lang === 'es' ? `${siteUrl}/es/` : `${siteUrl}/`;
+const alternateEnUrl = `${siteUrl}/`;
+const alternateEsUrl = `${siteUrl}/es/`;
+
+// Organization Schema
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
+  "name": "Numonis",
+  "url": siteUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${siteUrl}/web-app-manifest-512x512.png`,
+    "width": 512,
+    "height": 512
+  },
+  "description": lang === 'en'
+    ? "Modern accounting services for European SMEs combining human expertise with AI technology."
+    : "Servicios de contabilidad modernos para PYMEs europeas combinando experiencia humana con tecnología de IA.",
+  "email": "hello@numonis.com",
+  "sameAs": [
+    "https://www.linkedin.com/company/numonis/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "hello@numonis.com",
+    "availableLanguage": ["English", "Spanish", "Portuguese"]
+  },
+  "areaServed": [
+    { "@type": "Country", "name": "Spain" },
+    { "@type": "Country", "name": "Portugal" }
+  ]
+};
+
+// WebSite Schema
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  "url": siteUrl,
+  "name": "Numonis",
+  "description": finalDescription,
+  "publisher": { "@id": `${siteUrl}/#organization` },
+  "inLanguage": lang === 'es' ? "es" : "en"
+};
+
+// LocalBusiness Schema - Porto Office
+const portoOfficeSchema = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "@id": `${siteUrl}/#porto-office`,
+  "name": "Numonis - Porto",
+  "url": siteUrl,
+  "email": "porto@numonis.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Damião de Góis, 323",
+    "addressLocality": "Porto",
+    "postalCode": "4050-226",
+    "addressCountry": "PT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 41.1579,
+    "longitude": -8.6291
+  },
+  "parentOrganization": { "@id": `${siteUrl}/#organization` },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
+};
+
+// LocalBusiness Schema - A Coruña Office
+const corunaOfficeSchema = {
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "@id": `${siteUrl}/#coruna-office`,
+  "name": "Numonis - A Coruña",
+  "url": siteUrl,
+  "email": "coruna@numonis.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Real, 45",
+    "addressLocality": "A Coruña",
+    "postalCode": "15003",
+    "addressCountry": "ES"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.3623,
+    "longitude": -8.4115
+  },
+  "parentOrganization": { "@id": `${siteUrl}/#organization` },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
+};
+
+// FAQPage Schema - English
+const faqSchemaEn = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does Numonis provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Numonis provides comprehensive accounting services for SMEs, including bookkeeping, tax preparation, financial reporting, payroll management, and business advisory. All powered by modern technology and AI tools to give you real-time insights into your business."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Numonis different from traditional accountants?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike traditional accountants who work reactively and focus on month-end reporting, we use modern tools to automate manual bookkeeping and enable real-time collaboration. You get a dedicated accountant specialized in your sector, plus access to our AI-powered platform."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Business Health Score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Business Health Score is a comprehensive metric that gives you a clear picture of your business's financial health. It's calculated using real-time data from your accounts, helping you spot potential issues before they become problems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I get started with Numonis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Getting started is easy! Schedule a free demo through our website, and we'll walk you through our platform and services. After understanding your needs, we'll match you with a specialized accountant and have you onboarded within days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my data secure with Numonis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutely. We use bank-level encryption and security protocols to protect your data. Our platform is hosted on secure European servers, and we comply with GDPR and all relevant data protection regulations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I switch from my current accountant to Numonis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! We make the transition seamless. Our team handles the entire migration process, coordinating with your previous accountant to ensure all your financial data and history is transferred securely and accurately."
+      }
+    }
+  ]
+};
+
+// FAQPage Schema - Spanish
+const faqSchemaEs = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué servicios ofrece Numonis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Numonis ofrece servicios contables integrales para PYMEs, incluyendo contabilidad, preparación de impuestos, informes financieros, gestión de nóminas y asesoría empresarial. Todo potenciado por tecnología moderna y herramientas de IA."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En qué se diferencia Numonis de los contadores tradicionales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A diferencia de los contadores tradicionales que trabajan de forma reactiva, usamos herramientas modernas para automatizar la contabilidad manual y permitir la colaboración en tiempo real. Obtienes un contador dedicado especializado en tu sector."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué es la Puntuación de Salud Empresarial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La Puntuación de Salud Empresarial es una métrica integral que te da una imagen clara de la salud financiera de tu negocio. Se calcula usando datos en tiempo real de tus cuentas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo empiezo con Numonis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "¡Empezar es fácil! Agenda una demo gratuita a través de nuestro sitio web, y te mostraremos nuestra plataforma y servicios. Después de entender tus necesidades, te asignaremos un contador especializado."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Están seguros mis datos con Numonis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolutamente. Usamos encriptación y protocolos de seguridad de nivel bancario para proteger tus datos. Nuestra plataforma está alojada en servidores europeos seguros y cumplimos con el RGPD."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo cambiar de mi contador actual a Numonis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "¡Sí! Hacemos la transición sin problemas. Nuestro equipo maneja todo el proceso de migración, coordinando con tu contador anterior para asegurar que todos tus datos se transfieran de forma segura."
+      }
+    }
+  ]
+};
+
+const faqSchema = lang === 'es' ? faqSchemaEs : faqSchemaEn;
 ---
 
 <!DOCTYPE html>
@@ -25,25 +247,34 @@ const finalDescription = lang === 'es' ? descriptionByLang.es : descriptionByLan
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
-  <meta name="description" content={description}>
+  <meta name="description" content={finalDescription}>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://numonis.com/">
+  <meta property="og:url" content={canonicalUrl}>
   <meta property="og:title" content={title}>
-  <meta property="og:description" content={description}>
-  <meta property="og:image" content="https://numonis.com/web-app-manifest-512x512.png">
+  <meta property="og:description" content={finalDescription}>
+  <meta property="og:image" content={`${siteUrl}/web-app-manifest-512x512.png`}>
+  <meta property="og:locale" content={lang === 'es' ? 'es_ES' : 'en_US'}>
+  <meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_ES'}>
+  <meta property="og:site_name" content="Numonis">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content={title}>
-  <meta name="twitter:description" content={description}>
-  <meta name="twitter:image" content="https://numonis.com/web-app-manifest-512x512.png">
+  <meta name="twitter:description" content={finalDescription}>
+  <meta name="twitter:image" content={`${siteUrl}/web-app-manifest-512x512.png`}>
+
+  <!-- Canonical and hreflang -->
+  <link rel="canonical" href={canonicalUrl}>
+  <link rel="alternate" hreflang="en" href={alternateEnUrl}>
+  <link rel="alternate" hreflang="es" href={alternateEsUrl}>
+  <link rel="alternate" hreflang="x-default" href={alternateEnUrl}>
 
   <!-- Additional SEO -->
-  <link rel="canonical" href="https://numonis.com/">
   <meta name="theme-color" content="#797E5D">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="Numonis">
 
   <!-- Favicons -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
@@ -51,6 +282,13 @@ const finalDescription = lang === 'es' ? descriptionByLang.es : descriptionByLan
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(portoOfficeSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(corunaOfficeSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 </head>
 <body class="min-h-screen">
   <slot />
