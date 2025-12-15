@@ -323,7 +323,7 @@ export const ui = {
     'faq.a2': 'A diferencia de los asesores tradicionales que trabajan de forma reactiva y se centran en informes de fin de mes, usamos herramientas modernas para automatizar la contabilidad manual y permitir la colaboración en tiempo real. Obtienes un asesor dedicado especializado en tu sector, más acceso a nuestra plataforma con IA. Juntos, esto proporciona alertas proactivas, información continua y contabilidad inteligente que te ayuda a ir por delante - no a ponerte al día.',
     'faq.q3': '¿Qué es la Puntuación de Salud Empresarial?',
     'faq.a3': 'La Puntuación de Salud Empresarial es una métrica integral que te da una imagen clara de la salud financiera de tu negocio. Se calcula usando datos en tiempo real de tus cuentas, ayudándote a detectar problemas potenciales antes de que se conviertan en crisis y a tomar decisiones informadas.',
-    'faq.q4': '¿Cómo empiezo con Numonis?',
+    'faq.q4': '¿Cómo empiezo a utilizar Numonis?',
     'faq.a4': '¡Empezar es fácil! Agenda una demo gratuita a través de nuestro sitio web, y te mostraremos nuestra plataforma y servicios. Después de entender tus necesidades, te asignaremos un asesor especializado y estarás operativo en días.',
     'faq.q5': '¿Están seguros mis datos con Numonis?',
     'faq.a5': 'Absolutamente. Usamos encriptación y protocolos de seguridad de nivel bancario para proteger tus datos. Nuestra plataforma está alojada en servidores europeos seguros, y cumplimos con el RGPD y todas las regulaciones relevantes de protección de datos.',

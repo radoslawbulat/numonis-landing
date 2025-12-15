@@ -28,23 +28,23 @@ const t = useTranslations(lang);
         </p>
 
         <!-- Trust badges -->
-        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 md:gap-4 text-sm md:text-base text-neutral-600 mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
-          <span class="flex items-center gap-2">
-            <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+        <div class="flex items-center justify-center lg:justify-start gap-2 md:gap-4 text-sm md:text-base text-neutral-600 mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-4 h-4 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
             </svg>
             {t('hero.realTimeSupport')}
           </span>
           <span class="text-neutral-300">|</span>
-          <span class="flex items-center gap-2">
-            <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-4 h-4 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
             </svg>
             {t('hero.localExpertise')}
           </span>
           <span class="text-neutral-300">|</span>
-          <span class="flex items-center gap-2">
-            <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-4 h-4 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
             </svg>
             {t('hero.digital')}
@@ -69,111 +69,119 @@ const t = useTranslations(lang);
 
       <!-- Right column: Animated Chat -->
       <div class="animate-fade-in-up relative aspect-square w-full max-w-md mx-auto lg:max-w-none lg:mx-0" style="animation-delay: 0.2s">
-        <!-- Background image -->
-        <div class="absolute inset-0 rounded-3xl overflow-hidden">
-          <img
-            src="/background.png"
-            alt=""
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <!-- Chat overlay -->
-        <div class="absolute inset-0 m-4 sm:m-6 lg:m-10 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-4 border border-neutral-100 overflow-hidden flex flex-col">
-          <!-- Chat header -->
-          <div class="flex items-center gap-2 pb-2 border-b border-neutral-100 mb-2 flex-shrink-0">
-            <div class="relative">
-              <img
-                src="/images/profile1.png"
-                alt="María González"
-                class="w-8 h-8 rounded-full object-cover"
-              />
-              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary-500 border-2 border-white rounded-full"></span>
-            </div>
-            <div>
-              <p class="font-medium text-neutral-900 text-sm">María González</p>
-              <p class="text-xs text-primary-500 flex items-center gap-1">
-                {t('hero.chat.accountantRole')}
-              </p>
-            </div>
+        <!-- Mobile: Static image -->
+        <img
+          src={`/images/hero${lang}.png`}
+          alt={t('hero.headline')}
+          class="block sm:hidden w-full h-auto rounded-3xl"
+        />
+        <!-- Desktop: Live animated component -->
+        <div class="hidden sm:block relative w-full h-full">
+          <!-- Background image -->
+          <div class="absolute inset-0 rounded-3xl overflow-hidden">
+            <img
+              src="/background.png"
+              alt=""
+              class="w-full h-full object-cover"
+            />
           </div>
-
-          <!-- Chat messages -->
-          <div class="space-y-2 flex-1 overflow-y-auto scrollbar-hide" id="hero-chat">
-            <!-- Message 1: User -->
-            <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 0.5s">
-              <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
-                <p class="text-sm">{t('hero.chat.message1')}</p>
+          <!-- Chat overlay -->
+          <div class="absolute inset-0 m-4 sm:m-6 lg:m-10 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-4 border border-neutral-100 overflow-hidden flex flex-col">
+            <!-- Chat header -->
+            <div class="flex items-center gap-2 pb-2 border-b border-neutral-100 mb-2 flex-shrink-0">
+              <div class="relative">
+                <img
+                  src="/images/profile1.png"
+                  alt="María González"
+                  class="w-8 h-8 rounded-full object-cover"
+                />
+                <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary-500 border-2 border-white rounded-full"></span>
+              </div>
+              <div>
+                <p class="font-medium text-neutral-900 text-sm">María González</p>
+                <p class="text-xs text-primary-500 flex items-center gap-1">
+                  {t('hero.chat.accountantRole')}
+                </p>
               </div>
             </div>
 
-            <!-- Message 2: Accountant -->
-            <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 1.5s">
-              <div class="bg-neutral-100 text-neutral-800 rounded-xl rounded-bl-sm px-3 py-1.5 max-w-[80%]">
-                <p class="text-sm">{t('hero.chat.message2')}</p>
-              </div>
-            </div>
-
-            <!-- Message 3: User -->
-            <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 3s">
-              <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
-                <p class="text-sm">{t('hero.chat.message3')}</p>
-              </div>
-            </div>
-
-            <!-- Message 4: Accountant -->
-            <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 4s">
-              <div class="bg-neutral-100 text-neutral-800 rounded-xl rounded-bl-sm px-3 py-1.5 max-w-[80%]">
-                <p class="text-sm">{t('hero.chat.message4')}</p>
-              </div>
-            </div>
-
-            <!-- Chart: Tax Savings Breakdown -->
-            <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 5s">
-              <div class="bg-neutral-100 text-neutral-800 rounded-xl rounded-bl-sm px-3 py-2 max-w-[85%] w-full">
-                <p class="text-xs font-medium text-neutral-500 mb-2">{t('hero.chat.chartTitle')}</p>
-                <div class="space-y-1.5">
-                  <!-- Home Office -->
-                  <div class="flex items-center gap-1.5">
-                    <span class="text-xs text-neutral-600 w-16 shrink-0">{t('hero.chat.homeOffice')}</span>
-                    <div class="flex-1 h-3 bg-neutral-200 rounded-full overflow-hidden">
-                      <div class="chart-bar h-full bg-primary-500 rounded-full" style="--bar-width: 85%; animation-delay: 5.3s"></div>
-                    </div>
-                    <span class="text-xs font-medium text-neutral-700 w-10 text-right">€1.100</span>
-                  </div>
-                  <!-- Equipment -->
-                  <div class="flex items-center gap-1.5">
-                    <span class="text-xs text-neutral-600 w-16 shrink-0">{t('hero.chat.equipment')}</span>
-                    <div class="flex-1 h-3 bg-neutral-200 rounded-full overflow-hidden">
-                      <div class="chart-bar h-full bg-primary-400 rounded-full" style="--bar-width: 62%; animation-delay: 5.4s"></div>
-                    </div>
-                    <span class="text-xs font-medium text-neutral-700 w-10 text-right">€800</span>
-                  </div>
-                  <!-- Software -->
-                  <div class="flex items-center gap-1.5">
-                    <span class="text-xs text-neutral-600 w-16 shrink-0">{t('hero.chat.software')}</span>
-                    <div class="flex-1 h-3 bg-neutral-200 rounded-full overflow-hidden">
-                      <div class="chart-bar h-full bg-secondary-500 rounded-full" style="--bar-width: 38%; animation-delay: 5.5s"></div>
-                    </div>
-                    <span class="text-xs font-medium text-neutral-700 w-10 text-right">€500</span>
-                  </div>
-                </div>
-                <!-- Total -->
-                <div class="flex items-center justify-between mt-2 pt-1.5 border-t border-neutral-200">
-                  <span class="text-xs text-neutral-500">{t('hero.chat.totalSavings')}</span>
-                  <span class="text-sm font-semibold text-primary-600">€2.400</span>
+            <!-- Chat messages -->
+            <div class="space-y-2 flex-1 overflow-y-auto scrollbar-hide" id="hero-chat">
+              <!-- Message 1: User -->
+              <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 0.5s">
+                <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
+                  <p class="text-sm">{t('hero.chat.message1')}</p>
                 </div>
               </div>
-            </div>
 
-            <!-- Message 5: User -->
-            <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 6.5s">
-              <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
-                <p class="text-sm">{t('hero.chat.message5')}</p>
+              <!-- Message 2: Accountant -->
+              <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 1.5s">
+                <div class="bg-neutral-100 text-neutral-800 rounded-xl rounded-bl-sm px-3 py-1.5 max-w-[80%]">
+                  <p class="text-sm">{t('hero.chat.message2')}</p>
+                </div>
+              </div>
+
+              <!-- Message 3: User -->
+              <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 3s">
+                <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
+                  <p class="text-sm">{t('hero.chat.message3')}</p>
+                </div>
+              </div>
+
+              <!-- Message 4: Accountant -->
+              <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 4s">
+                <div class="bg-neutral-100 text-neutral-800 rounded-xl rounded-bl-sm px-3 py-1.5 max-w-[80%]">
+                  <p class="text-sm">{t('hero.chat.message4')}</p>
+                </div>
+              </div>
+
+              <!-- Chart: Tax Savings Breakdown -->
+              <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 5s">
+                <div class="bg-neutral-100 text-neutral-800 rounded-xl rounded-bl-sm px-3 py-2 max-w-[85%] w-full">
+                  <p class="text-xs font-medium text-neutral-500 mb-2">{t('hero.chat.chartTitle')}</p>
+                  <div class="space-y-1.5">
+                    <!-- Home Office -->
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-xs text-neutral-600 w-16 shrink-0">{t('hero.chat.homeOffice')}</span>
+                      <div class="flex-1 h-3 bg-neutral-200 rounded-full overflow-hidden">
+                        <div class="chart-bar h-full bg-primary-500 rounded-full" style="--bar-width: 85%; animation-delay: 5.3s"></div>
+                      </div>
+                      <span class="text-xs font-medium text-neutral-700 w-10 text-right">€1.100</span>
+                    </div>
+                    <!-- Equipment -->
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-xs text-neutral-600 w-16 shrink-0">{t('hero.chat.equipment')}</span>
+                      <div class="flex-1 h-3 bg-neutral-200 rounded-full overflow-hidden">
+                        <div class="chart-bar h-full bg-primary-400 rounded-full" style="--bar-width: 62%; animation-delay: 5.4s"></div>
+                      </div>
+                      <span class="text-xs font-medium text-neutral-700 w-10 text-right">€800</span>
+                    </div>
+                    <!-- Software -->
+                    <div class="flex items-center gap-1.5">
+                      <span class="text-xs text-neutral-600 w-16 shrink-0">{t('hero.chat.software')}</span>
+                      <div class="flex-1 h-3 bg-neutral-200 rounded-full overflow-hidden">
+                        <div class="chart-bar h-full bg-secondary-500 rounded-full" style="--bar-width: 38%; animation-delay: 5.5s"></div>
+                      </div>
+                      <span class="text-xs font-medium text-neutral-700 w-10 text-right">€500</span>
+                    </div>
+                  </div>
+                  <!-- Total -->
+                  <div class="flex items-center justify-between mt-2 pt-1.5 border-t border-neutral-200">
+                    <span class="text-xs text-neutral-500">{t('hero.chat.totalSavings')}</span>
+                    <span class="text-sm font-semibold text-primary-600">€2.400</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message 5: User -->
+              <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 6.5s">
+                <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
+                  <p class="text-sm">{t('hero.chat.message5')}</p>
+                </div>
               </div>
             </div>
-          </div>
 
-        </div>
+          </div>
         </div>
       </div>
     </div>
