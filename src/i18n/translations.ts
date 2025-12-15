@@ -17,8 +17,8 @@ export const ui = {
     // Hero
     'hero.headline': 'Step into the new era of accounting with',
     'hero.subheadline': 'Your modern accountant, Next door.',
-    'hero.globalStandards': 'Global standards',
-    'hero.localPresence': 'Local presence',
+    'hero.realTimeSupport': '24/7 access',
+    'hero.localExpertise': 'Local, sector expertise',
     'hero.digital': '100% digital',
     'hero.peaceMind': 'Peace of mind, powered by expert accountants and AI technology',
     'hero.scheduleDemo': 'Schedule a product demo',
@@ -38,11 +38,11 @@ export const ui = {
     'hero.chat.totalSavings': 'Total Savings',
 
     // Trusted By
-    'trustedBy.title': 'Trusted by growing businesses across Spain',
+    'trustedBy.title': 'Trusted by growing businesses across Spain & Portugal',
 
     // Experience Section
     'experience.label': 'The Numonis Experience',
-    'experience.title': 'Everything you need to run your business with confidence',
+    'experience.title': 'Enterprise Power, Now Built for Small Businesses. Level the playing field with Numonis.',
     'experience.feature1.title': 'Specialized Accountants',
     'experience.feature1.description': 'Specialized accountants, supercharged by technology. Deep sector knowledge meets proactive, modern workflows.',
     'experience.feature2.title': 'Effortless Collaboration',
@@ -59,13 +59,13 @@ export const ui = {
     // Mission Section
     'mission.label': 'Our Mission',
     'mission.title': 'Leveling the Playing Field',
-    'mission.statement': 'Our mission is to give every small business the clarity, confidence, and support once reserved for the world\'s largest companies.',
-    'mission.transforming.title': 'Transforming Relationships',
-    'mission.transforming.description': 'We transform the accountant–SME relationship into a proactive, effortless partnership powered by modern tools, real-time data, and a service experience built around trust.',
+    'mission.statement': 'Our mission is to give every small business the tools, intelligence, and partnership they need to transform accounting from a burden into a source of power and possibility.',
+    'mission.problem': 'Accounting operations often feels like a burden to small businesses. Outdated tools, manual inefficient workflows, never-ending paperwork, data trapped in spreadsheets and hidden behind complexity.',
+    'mission.solution': 'We are redesigning the SME accounting operations by:',
+    'mission.transforming.title': 'Transforming Collaboration',
+    'mission.transforming.description': 'We create an effortless partnership through an intelligent platform and way of working that simplify how businesses interact with their accountant, share data, and access real-time insights.',
     'mission.handling.title': 'Handling Complexity',
     'mission.handling.description': 'We handle the operational complexity—accounting, workflows, data, and access to trusted experts—so business owners can focus on building, not managing.',
-    'mission.vision.headline': 'Numonis exists to level the playing field.',
-    'mission.vision.description': 'We are creating a future where every small business has the tools, intelligence, and support to compete with anyone.',
     'mission.values.title': 'Our Values',
     'mission.values.clarity.title': 'Clarity & Simplicity',
     'mission.values.clarity.description': 'We turn complicated processes into intuitive experiences.',
@@ -79,7 +79,7 @@ export const ui = {
     // Locations Section
     'locations.label': 'Find Us',
     'locations.title': 'Local Presence, Global Standards',
-    'locations.description': 'Visit one of our offices across Spain. Your modern accountant, next door.',
+    'locations.description': 'Local presence, global standards. Visit us in one of our offices across Spain.',
     'locations.online.title': 'Meet Us Online',
     'locations.online.description': 'Can\'t visit in person? We\'re 100% digital. Schedule a video call with our team from anywhere in the world.',
     'locations.online.cta': 'Schedule a Demo',
@@ -129,7 +129,7 @@ export const ui = {
     'faq.q1': 'What services does Numonis provide?',
     'faq.a1': 'Numonis provides comprehensive accounting services for SMEs, including bookkeeping, tax preparation, financial reporting, payroll management, and business advisory. All powered by modern technology and AI tools to give you real-time insights into your business.',
     'faq.q2': 'How is Numonis different from traditional accountants?',
-    'faq.a2': 'Unlike traditional accountants who work reactively, Numonis combines expert accountants with cutting-edge technology. You get a dedicated accountant plus access to our AI-powered platform for real-time insights, secure document sharing, instant messaging, and a Business Health Score that keeps you informed 24/7.',
+    'faq.a2': 'Unlike traditional accountants who work reactively and focus on month-end reporting, we use modern tools to automate manual bookkeeping and enable real-time collaboration. You get a dedicated accountant specialized in your sector, plus access to our AI-powered platform. Together, this provides proactive alerts, ongoing insights, and intelligent bookkeeping that helps you stay ahead - not catch up.',
     'faq.q3': 'What is the Business Health Score?',
     'faq.a3': 'The Business Health Score is a comprehensive metric that gives you a clear picture of your business\'s financial health. It\'s calculated using real-time data from your accounts, helping you spot potential issues before they become problems and make informed decisions.',
     'faq.q4': 'How do I get started with Numonis?',
@@ -198,8 +198,8 @@ export const ui = {
     // Hero
     'hero.headline': 'Entra en la nueva era de la contabilidad con',
     'hero.subheadline': 'Tu asesor moderno, al lado.',
-    'hero.globalStandards': 'Estándares globales',
-    'hero.localPresence': 'Presencia local',
+    'hero.realTimeSupport': 'Acceso 24/7',
+    'hero.localExpertise': 'Experiencia local y sectorial',
     'hero.digital': '100% digital',
     'hero.peaceMind': 'Tranquilidad, impulsada por contadores expertos y tecnología de IA',
     'hero.scheduleDemo': 'Agenda una demo del producto',
@@ -219,11 +219,11 @@ export const ui = {
     'hero.chat.totalSavings': 'Ahorro Total',
 
     // Trusted By
-    'trustedBy.title': 'Empresas en crecimiento en España confían en nosotros',
+    'trustedBy.title': 'Empresas en crecimiento en España y Portugal confían en nosotros',
 
     // Experience Section
     'experience.label': 'La Experiencia Numonis',
-    'experience.title': 'Todo lo que necesitas para gestionar tu negocio con confianza',
+    'experience.title': 'Poder Empresarial, Ahora para Pequeños Negocios. Nivela el campo de juego con Numonis.',
     'experience.feature1.title': 'Contadores Especializados',
     'experience.feature1.description': 'Contadores especializados, potenciados por la tecnología. Conocimiento sectorial profundo con flujos de trabajo modernos y proactivos.',
     'experience.feature2.title': 'Colaboración Sin Esfuerzo',
@@ -240,13 +240,13 @@ export const ui = {
     // Mission Section
     'mission.label': 'Nuestra Misión',
     'mission.title': 'Nivelando el Campo de Juego',
-    'mission.statement': 'Nuestra misión es dar a cada pequeña empresa la claridad, confianza y apoyo que antes estaban reservados para las empresas más grandes del mundo.',
-    'mission.transforming.title': 'Transformando Relaciones',
-    'mission.transforming.description': 'Transformamos la relación contador-PYME en una asociación proactiva y sin esfuerzo, impulsada por herramientas modernas, datos en tiempo real y una experiencia de servicio construida sobre la confianza.',
+    'mission.statement': 'Nuestra misión es dar a cada pequeña empresa las herramientas, inteligencia y colaboración que necesitan para transformar la contabilidad de una carga en una fuente de poder y posibilidad.',
+    'mission.problem': 'Las operaciones contables a menudo se sienten como una carga para las pequeñas empresas. Herramientas obsoletas, flujos de trabajo manuales e ineficientes, papeleo interminable, datos atrapados en hojas de cálculo y ocultos tras la complejidad.',
+    'mission.solution': 'Estamos rediseñando las operaciones contables de las PYMEs:',
+    'mission.transforming.title': 'Transformando la Colaboración',
+    'mission.transforming.description': 'Creamos una asociación sin esfuerzo a través de una plataforma inteligente y una forma de trabajar que simplifican cómo las empresas interactúan con su contador, comparten datos y acceden a información en tiempo real.',
     'mission.handling.title': 'Gestionando la Complejidad',
     'mission.handling.description': 'Manejamos la complejidad operativa—contabilidad, flujos de trabajo, datos y acceso a expertos de confianza—para que los dueños de negocios puedan enfocarse en construir, no en gestionar.',
-    'mission.vision.headline': 'Numonis existe para nivelar el campo de juego.',
-    'mission.vision.description': 'Estamos creando un futuro donde cada pequeña empresa tenga las herramientas, inteligencia y apoyo para competir con cualquiera.',
     'mission.values.title': 'Nuestros Valores',
     'mission.values.clarity.title': 'Claridad y Simplicidad',
     'mission.values.clarity.description': 'Convertimos procesos complicados en experiencias intuitivas.',
@@ -260,7 +260,7 @@ export const ui = {
     // Locations Section
     'locations.label': 'Encuéntranos',
     'locations.title': 'Presencia Local, Estándares Globales',
-    'locations.description': 'Visita una de nuestras oficinas en España. Tu asesor moderno, al lado.',
+    'locations.description': 'Presencia local, estándares globales. Visítanos en una de nuestras oficinas en España.',
     'locations.online.title': 'Reúnete con Nosotros Online',
     'locations.online.description': '¿No puedes visitarnos en persona? Somos 100% digitales. Agenda una videollamada con nuestro equipo desde cualquier lugar del mundo.',
     'locations.online.cta': 'Agenda una Demo',
@@ -310,7 +310,7 @@ export const ui = {
     'faq.q1': '¿Qué servicios ofrece Numonis?',
     'faq.a1': 'Numonis ofrece servicios contables integrales para PYMEs, incluyendo contabilidad, preparación de impuestos, informes financieros, gestión de nóminas y asesoría empresarial. Todo potenciado por tecnología moderna y herramientas de IA para darte información en tiempo real sobre tu negocio.',
     'faq.q2': '¿En qué se diferencia Numonis de los contadores tradicionales?',
-    'faq.a2': 'A diferencia de los contadores tradicionales que trabajan de forma reactiva, Numonis combina contadores expertos con tecnología de vanguardia. Obtienes un contador dedicado más acceso a nuestra plataforma con IA para insights en tiempo real, intercambio seguro de documentos, mensajería instantánea y una Puntuación de Salud Empresarial que te mantiene informado 24/7.',
+    'faq.a2': 'A diferencia de los contadores tradicionales que trabajan de forma reactiva y se centran en informes de fin de mes, usamos herramientas modernas para automatizar la contabilidad manual y permitir la colaboración en tiempo real. Obtienes un contador dedicado especializado en tu sector, más acceso a nuestra plataforma con IA. Juntos, esto proporciona alertas proactivas, información continua y contabilidad inteligente que te ayuda a ir por delante - no a ponerte al día.',
     'faq.q3': '¿Qué es la Puntuación de Salud Empresarial?',
     'faq.a3': 'La Puntuación de Salud Empresarial es una métrica integral que te da una imagen clara de la salud financiera de tu negocio. Se calcula usando datos en tiempo real de tus cuentas, ayudándote a detectar problemas potenciales antes de que se conviertan en crisis y a tomar decisiones informadas.',
     'faq.q4': '¿Cómo empiezo con Numonis?',
