@@ -14,54 +14,138 @@ const t = useTranslations(lang);
   <div class="absolute inset-0 gradient-hero"></div>
 
   <div class="container relative z-10">
-    <div class="max-w-4xl mx-auto text-center">
-      <!-- Headline -->
-      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-neutral-900 mb-6 animate-fade-in-up">
-        {t('hero.headline')} <span class="text-primary-500">Numonis</span>
-      </h1>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <!-- Left column: Text content -->
+      <div class="text-left">
+        <!-- Headline -->
+        <h1 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-neutral-900 mb-6 animate-fade-in-up">
+          {t('hero.headline')} <span class="text-primary-500">Numonis</span>
+        </h1>
 
-      <!-- Subheadline -->
-      <p class="text-xl md:text-2xl lg:text-3xl text-neutral-700 font-light mb-4 animate-fade-in-up" style="animation-delay: 0.1s">
-        {t('hero.subheadline')}
-      </p>
+        <!-- Subheadline -->
+        <p class="text-xl md:text-2xl lg:text-2xl text-neutral-700 font-light mb-4 animate-fade-in-up" style="animation-delay: 0.1s">
+          {t('hero.subheadline')}
+        </p>
 
-      <!-- Trust badges -->
-      <div class="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-sm md:text-base text-neutral-600 mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
-        <span class="flex items-center gap-2">
-          <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-          </svg>
-          {t('hero.globalStandards')}
-        </span>
-        <span class="text-neutral-300">|</span>
-        <span class="flex items-center gap-2">
-          <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-          </svg>
-          {t('hero.localPresence')}
-        </span>
-        <span class="text-neutral-300">|</span>
-        <span class="flex items-center gap-2">
-          <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-          </svg>
-          {t('hero.digital')}
-        </span>
+        <!-- Trust badges -->
+        <div class="flex flex-wrap items-center gap-2 md:gap-4 text-sm md:text-base text-neutral-600 mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            {t('hero.globalStandards')}
+          </span>
+          <span class="text-neutral-300">|</span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            {t('hero.localPresence')}
+          </span>
+          <span class="text-neutral-300">|</span>
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            {t('hero.digital')}
+          </span>
+        </div>
+
+        <!-- Secondary text -->
+        <p class="text-base md:text-lg text-neutral-600 mb-10 max-w-xl animate-fade-in-up" style="animation-delay: 0.3s">
+          {t('hero.peaceMind')}
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-start gap-4 animate-fade-in-up" style="animation-delay: 0.4s">
+          <a href="#demo" class="btn btn-primary text-base px-8 py-4 w-full sm:w-auto">
+            {t('hero.scheduleDemo')}
+          </a>
+          <a href="#contact" class="btn btn-outline text-base px-8 py-4 w-full sm:w-auto">
+            {t('hero.talkToExpert')}
+          </a>
+        </div>
       </div>
 
-      <!-- Secondary text -->
-      <p class="text-base md:text-lg text-neutral-600 mb-10 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.3s">
-        {t('hero.peaceMind')}
-      </p>
+      <!-- Right column: Animated Chat -->
+      <div class="hidden lg:block animate-fade-in-up relative" style="animation-delay: 0.2s">
+        <!-- Background image -->
+        <div class="absolute inset-0 rounded-3xl overflow-hidden">
+          <img
+            src="/background.png"
+            alt=""
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <!-- Chat overlay -->
+        <div class="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-4 border border-neutral-100 m-10">
+          <!-- Chat header -->
+          <div class="flex items-center gap-3 pb-4 border-b border-neutral-100 mb-4">
+            <div class="relative">
+              <img
+                src="/images/profile1.png"
+                alt="María González"
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <span class="absolute bottom-0 right-0 w-3 h-3 bg-primary-500 border-2 border-white rounded-full"></span>
+            </div>
+            <div>
+              <p class="font-medium text-neutral-900 text-sm">María González</p>
+              <p class="text-xs text-primary-500 flex items-center gap-1">
+                Your Accountant
+              </p>
+            </div>
+          </div>
 
-      <!-- CTA Buttons -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.4s">
-        <a href="#demo" class="btn btn-primary text-base px-8 py-4 w-full sm:w-auto">
-          {t('hero.scheduleDemo')}
-        </a>
-        <a href="#contact" class="btn btn-outline text-base px-8 py-4 w-full sm:w-auto">
-          {t('hero.talkToExpert')}
-        </a>
+          <!-- Chat messages -->
+          <div class="space-y-4 min-h-[320px]" id="hero-chat">
+            <!-- Message 1: User -->
+            <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 0.5s">
+              <div class="bg-primary-500 text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%]">
+                <p class="text-sm">Hi Sarah, can I expense my home office setup?</p>
+              </div>
+            </div>
+
+            <!-- Message 2: Accountant -->
+            <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 1.5s">
+              <div class="bg-neutral-100 text-neutral-800 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[80%]">
+                <p class="text-sm">Yes! You can claim desk, chair, and equipment. I see you uploaded receipts - I'll add them to your Q4 deductions.</p>
+              </div>
+            </div>
+
+            <!-- Message 3: User -->
+            <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 3s">
+              <div class="bg-primary-500 text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%]">
+                <p class="text-sm">That was fast! How's my tax position looking?</p>
+              </div>
+            </div>
+
+            <!-- Message 4: Accountant -->
+            <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 4s">
+              <div class="bg-neutral-100 text-neutral-800 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[80%]">
+                <p class="text-sm">You're in great shape! With these deductions, you'll save around $2,400. I'll send a summary to your dashboard.</p>
+              </div>
+            </div>
+
+            <!-- Message 5: User -->
+            <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 5.5s">
+              <div class="bg-primary-500 text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%]">
+                <p class="text-sm">Amazing, thank you!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Typing indicator -->
+          <div class="typing-indicator opacity-0 flex items-center gap-2 mt-4 pt-4 border-t border-neutral-100" style="animation-delay: 6.5s">
+            <div class="flex gap-1">
+              <span class="w-2 h-2 bg-neutral-300 rounded-full animate-bounce" style="animation-delay: 0s"></span>
+              <span class="w-2 h-2 bg-neutral-300 rounded-full animate-bounce" style="animation-delay: 0.15s"></span>
+              <span class="w-2 h-2 bg-neutral-300 rounded-full animate-bounce" style="animation-delay: 0.3s"></span>
+            </div>
+            <span class="text-xs text-neutral-400">María is typing...</span>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
   </div>
@@ -69,3 +153,24 @@ const t = useTranslations(lang);
   <!-- Decorative elements -->
   <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-cream to-transparent"></div>
 </section>
+
+<style>
+  .chat-message {
+    animation: chatFadeIn 0.4s ease-out forwards;
+  }
+
+  .typing-indicator {
+    animation: chatFadeIn 0.3s ease-out forwards;
+  }
+
+  @keyframes chatFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
