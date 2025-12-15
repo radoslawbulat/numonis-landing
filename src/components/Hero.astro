@@ -16,7 +16,7 @@ const t = useTranslations(lang);
   <div class="container relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
       <!-- Left column: Text content -->
-      <div class="text-left">
+      <div class="text-center lg:text-left">
         <!-- Headline -->
         <h1 class="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-medium text-neutral-900 mb-6 animate-fade-in-up">
           {t('hero.headline')} <span class="text-primary-500">Numonis</span>
@@ -28,7 +28,7 @@ const t = useTranslations(lang);
         </p>
 
         <!-- Trust badges -->
-        <div class="flex flex-wrap items-center gap-2 md:gap-4 text-sm md:text-base text-neutral-600 mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 md:gap-4 text-sm md:text-base text-neutral-600 mb-8 animate-fade-in-up" style="animation-delay: 0.2s">
           <span class="flex items-center gap-2">
             <svg class="w-4 h-4 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
@@ -52,12 +52,12 @@ const t = useTranslations(lang);
         </div>
 
         <!-- Secondary text -->
-        <p class="text-base md:text-lg text-neutral-600 mb-10 max-w-xl animate-fade-in-up" style="animation-delay: 0.3s">
+        <p class="text-base md:text-lg text-neutral-600 mb-10 max-w-xl mx-auto lg:mx-0 animate-fade-in-up" style="animation-delay: 0.3s">
           {t('hero.peaceMind')}
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row items-start gap-4 animate-fade-in-up" style="animation-delay: 0.4s">
+        <div class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 animate-fade-in-up" style="animation-delay: 0.4s">
           <a href="#demo" class="btn btn-primary text-base px-8 py-4 w-full sm:w-auto">
             {t('hero.scheduleDemo')}
           </a>
@@ -68,7 +68,7 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Right column: Animated Chat -->
-      <div class="hidden lg:block animate-fade-in-up relative" style="animation-delay: 0.2s">
+      <div class="hidden lg:block animate-fade-in-up relative aspect-square" style="animation-delay: 0.2s">
         <!-- Background image -->
         <div class="absolute inset-0 rounded-3xl overflow-hidden">
           <img
@@ -78,16 +78,16 @@ const t = useTranslations(lang);
           />
         </div>
         <!-- Chat overlay -->
-        <div class="relative bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-4 border border-neutral-100 m-10">
+        <div class="absolute inset-0 m-6 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-3 border border-neutral-100 overflow-hidden flex flex-col">
           <!-- Chat header -->
-          <div class="flex items-center gap-3 pb-4 border-b border-neutral-100 mb-4">
+          <div class="flex items-center gap-2 pb-2 border-b border-neutral-100 mb-2 flex-shrink-0">
             <div class="relative">
               <img
                 src="/images/profile1.png"
                 alt="María González"
-                class="w-10 h-10 rounded-full object-cover"
+                class="w-8 h-8 rounded-full object-cover"
               />
-              <span class="absolute bottom-0 right-0 w-3 h-3 bg-primary-500 border-2 border-white rounded-full"></span>
+              <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary-500 border-2 border-white rounded-full"></span>
             </div>
             <div>
               <p class="font-medium text-neutral-900 text-sm">María González</p>
@@ -98,67 +98,67 @@ const t = useTranslations(lang);
           </div>
 
           <!-- Chat messages -->
-          <div class="space-y-4 min-h-[320px]" id="hero-chat">
+          <div class="space-y-2 flex-1 overflow-hidden" id="hero-chat">
             <!-- Message 1: User -->
             <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 0.5s">
-              <div class="bg-primary-500 text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%]">
+              <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
                 <p class="text-sm">{t('hero.chat.message1')}</p>
               </div>
             </div>
 
             <!-- Message 2: Accountant -->
             <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 1.5s">
-              <div class="bg-neutral-100 text-neutral-800 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[80%]">
+              <div class="bg-neutral-100 text-neutral-800 rounded-xl rounded-bl-sm px-3 py-1.5 max-w-[80%]">
                 <p class="text-sm">{t('hero.chat.message2')}</p>
               </div>
             </div>
 
             <!-- Message 3: User -->
             <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 3s">
-              <div class="bg-primary-500 text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%]">
+              <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
                 <p class="text-sm">{t('hero.chat.message3')}</p>
               </div>
             </div>
 
             <!-- Message 4: Accountant -->
             <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 4s">
-              <div class="bg-neutral-100 text-neutral-800 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[80%]">
+              <div class="bg-neutral-100 text-neutral-800 rounded-xl rounded-bl-sm px-3 py-1.5 max-w-[80%]">
                 <p class="text-sm">{t('hero.chat.message4')}</p>
               </div>
             </div>
 
             <!-- Chart: Tax Savings Breakdown -->
             <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 5s">
-              <div class="bg-neutral-100 text-neutral-800 rounded-2xl rounded-bl-md px-4 py-3 max-w-[85%] w-full">
-                <p class="text-xs font-medium text-neutral-500 mb-3">{t('hero.chat.chartTitle')}</p>
-                <div class="space-y-2">
+              <div class="bg-neutral-100 text-neutral-800 rounded-xl rounded-bl-sm px-3 py-2 max-w-[85%] w-full">
+                <p class="text-xs font-medium text-neutral-500 mb-2">{t('hero.chat.chartTitle')}</p>
+                <div class="space-y-1.5">
                   <!-- Home Office -->
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs text-neutral-600 w-20 shrink-0">{t('hero.chat.homeOffice')}</span>
-                    <div class="flex-1 h-4 bg-neutral-200 rounded-full overflow-hidden">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-xs text-neutral-600 w-16 shrink-0">{t('hero.chat.homeOffice')}</span>
+                    <div class="flex-1 h-3 bg-neutral-200 rounded-full overflow-hidden">
                       <div class="chart-bar h-full bg-primary-500 rounded-full" style="--bar-width: 85%; animation-delay: 5.3s"></div>
                     </div>
-                    <span class="text-xs font-medium text-neutral-700 w-12 text-right">€1.100</span>
+                    <span class="text-xs font-medium text-neutral-700 w-10 text-right">€1.100</span>
                   </div>
                   <!-- Equipment -->
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs text-neutral-600 w-20 shrink-0">{t('hero.chat.equipment')}</span>
-                    <div class="flex-1 h-4 bg-neutral-200 rounded-full overflow-hidden">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-xs text-neutral-600 w-16 shrink-0">{t('hero.chat.equipment')}</span>
+                    <div class="flex-1 h-3 bg-neutral-200 rounded-full overflow-hidden">
                       <div class="chart-bar h-full bg-primary-400 rounded-full" style="--bar-width: 62%; animation-delay: 5.4s"></div>
                     </div>
-                    <span class="text-xs font-medium text-neutral-700 w-12 text-right">€800</span>
+                    <span class="text-xs font-medium text-neutral-700 w-10 text-right">€800</span>
                   </div>
                   <!-- Software -->
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs text-neutral-600 w-20 shrink-0">{t('hero.chat.software')}</span>
-                    <div class="flex-1 h-4 bg-neutral-200 rounded-full overflow-hidden">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-xs text-neutral-600 w-16 shrink-0">{t('hero.chat.software')}</span>
+                    <div class="flex-1 h-3 bg-neutral-200 rounded-full overflow-hidden">
                       <div class="chart-bar h-full bg-secondary-500 rounded-full" style="--bar-width: 38%; animation-delay: 5.5s"></div>
                     </div>
-                    <span class="text-xs font-medium text-neutral-700 w-12 text-right">€500</span>
+                    <span class="text-xs font-medium text-neutral-700 w-10 text-right">€500</span>
                   </div>
                 </div>
                 <!-- Total -->
-                <div class="flex items-center justify-between mt-3 pt-2 border-t border-neutral-200">
+                <div class="flex items-center justify-between mt-2 pt-1.5 border-t border-neutral-200">
                   <span class="text-xs text-neutral-500">{t('hero.chat.totalSavings')}</span>
                   <span class="text-sm font-semibold text-primary-600">€2.400</span>
                 </div>
@@ -167,7 +167,7 @@ const t = useTranslations(lang);
 
             <!-- Message 5: User -->
             <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 6.5s">
-              <div class="bg-primary-500 text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%]">
+              <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
                 <p class="text-sm">{t('hero.chat.message5')}</p>
               </div>
             </div>
