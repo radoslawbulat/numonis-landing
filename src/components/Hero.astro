@@ -123,27 +123,56 @@ const t = useTranslations(lang);
             <!-- Message 4: Accountant -->
             <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 4s">
               <div class="bg-neutral-100 text-neutral-800 rounded-2xl rounded-bl-md px-4 py-2.5 max-w-[80%]">
-                <p class="text-sm">You're in great shape! With these deductions, you'll save around $2,400. I'll send a summary to your dashboard.</p>
+                <p class="text-sm">You're in great shape! With these deductions, you'll save around $2,400.</p>
+              </div>
+            </div>
+
+            <!-- Chart: Tax Savings Breakdown -->
+            <div class="chat-message opacity-0 flex justify-start" style="animation-delay: 5s">
+              <div class="bg-neutral-100 text-neutral-800 rounded-2xl rounded-bl-md px-4 py-3 max-w-[85%] w-full">
+                <p class="text-xs font-medium text-neutral-500 mb-3">Q4 Tax Savings Breakdown</p>
+                <div class="space-y-2">
+                  <!-- Home Office -->
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs text-neutral-600 w-20 shrink-0">Home Office</span>
+                    <div class="flex-1 h-4 bg-neutral-200 rounded-full overflow-hidden">
+                      <div class="chart-bar h-full bg-primary-500 rounded-full" style="--bar-width: 85%; animation-delay: 5.3s"></div>
+                    </div>
+                    <span class="text-xs font-medium text-neutral-700 w-12 text-right">$1,100</span>
+                  </div>
+                  <!-- Equipment -->
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs text-neutral-600 w-20 shrink-0">Equipment</span>
+                    <div class="flex-1 h-4 bg-neutral-200 rounded-full overflow-hidden">
+                      <div class="chart-bar h-full bg-primary-400 rounded-full" style="--bar-width: 62%; animation-delay: 5.4s"></div>
+                    </div>
+                    <span class="text-xs font-medium text-neutral-700 w-12 text-right">$800</span>
+                  </div>
+                  <!-- Software -->
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs text-neutral-600 w-20 shrink-0">Software</span>
+                    <div class="flex-1 h-4 bg-neutral-200 rounded-full overflow-hidden">
+                      <div class="chart-bar h-full bg-secondary-500 rounded-full" style="--bar-width: 38%; animation-delay: 5.5s"></div>
+                    </div>
+                    <span class="text-xs font-medium text-neutral-700 w-12 text-right">$500</span>
+                  </div>
+                </div>
+                <!-- Total -->
+                <div class="flex items-center justify-between mt-3 pt-2 border-t border-neutral-200">
+                  <span class="text-xs text-neutral-500">Total Savings</span>
+                  <span class="text-sm font-semibold text-primary-600">$2,400</span>
+                </div>
               </div>
             </div>
 
             <!-- Message 5: User -->
-            <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 5.5s">
+            <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 6.5s">
               <div class="bg-primary-500 text-white rounded-2xl rounded-br-md px-4 py-2.5 max-w-[80%]">
                 <p class="text-sm">Amazing, thank you!</p>
               </div>
             </div>
           </div>
 
-          <!-- Typing indicator -->
-          <div class="typing-indicator opacity-0 flex items-center gap-2 mt-4 pt-4 border-t border-neutral-100" style="animation-delay: 6.5s">
-            <div class="flex gap-1">
-              <span class="w-2 h-2 bg-neutral-300 rounded-full animate-bounce" style="animation-delay: 0s"></span>
-              <span class="w-2 h-2 bg-neutral-300 rounded-full animate-bounce" style="animation-delay: 0.15s"></span>
-              <span class="w-2 h-2 bg-neutral-300 rounded-full animate-bounce" style="animation-delay: 0.3s"></span>
-            </div>
-            <span class="text-xs text-neutral-400">María is typing...</span>
-          </div>
         </div>
         </div>
       </div>
@@ -163,6 +192,11 @@ const t = useTranslations(lang);
     animation: chatFadeIn 0.3s ease-out forwards;
   }
 
+  .chart-bar {
+    width: 0;
+    animation: barGrow 0.6s ease-out forwards;
+  }
+
   @keyframes chatFadeIn {
     from {
       opacity: 0;
@@ -171,6 +205,15 @@ const t = useTranslations(lang);
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes barGrow {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--bar-width);
     }
   }
 </style>
