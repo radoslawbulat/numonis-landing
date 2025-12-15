@@ -167,8 +167,20 @@ h1, h2, h3, h4, h5, h6 {
 .card {
   background-color: white;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: 1.25rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+@media (min-width: 640px) {
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 2rem;
+  }
 }
 
 /* Section spacing */
