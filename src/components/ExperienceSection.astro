@@ -75,7 +75,7 @@ const t = useTranslations(lang);
         <div class="mb-6">
           <div class="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center mb-6">
             <svg class="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
             </svg>
           </div>
           <h3 class="text-xl md:text-2xl font-medium text-neutral-900 mb-3">
@@ -86,36 +86,56 @@ const t = useTranslations(lang);
           </p>
         </div>
 
-        <!-- Collaboration chat mockup -->
+        <!-- File sharing mockup -->
         <div class="relative mt-8 p-8 rounded-3xl overflow-hidden">
           <!-- Background image -->
           <div class="absolute inset-0">
             <img src="/background.png" alt="" class="w-full h-full object-cover" />
           </div>
           <!-- Visualization overlay -->
-          <div class="relative rounded-2xl bg-white/95 backdrop-blur-sm p-6 shadow-lg border border-neutral-100 h-[250px] flex flex-col justify-between">
+          <div class="relative rounded-2xl bg-white/95 backdrop-blur-sm p-5 shadow-lg border border-neutral-100 h-[250px] flex flex-col justify-between">
             <div class="space-y-3">
-              <!-- Chat message from accountant -->
-              <div class="flex items-start gap-2">
-                <img src="/images/profile1.png" alt="Accountant" class="w-7 h-7 rounded-full object-cover flex-shrink-0" />
-                <div class="flex-1 bg-white rounded-lg p-2.5 shadow-sm">
-                  <p class="text-xs text-neutral-700">{t('mockup.chat.accountant')}</p>
-                  <p class="text-[10px] text-neutral-400 mt-1">10:32 AM</p>
+              <!-- File from accountant -->
+              <div>
+                <div class="flex items-center gap-1.5 mb-1.5">
+                  <svg class="w-3 h-3 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                  <span class="text-[10px] text-neutral-500">{t('mockup.files.fromAccountant')}</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm">
+                  <div class="w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-xs font-medium text-neutral-800 truncate">{t('mockup.files.vatReturn')}</p>
+                    <p class="text-[10px] text-neutral-400">10:32 AM</p>
+                  </div>
+                  <span class="px-2 py-0.5 bg-green-100 text-green-700 text-[10px] font-medium rounded-full flex-shrink-0">{t('mockup.files.signed')}</span>
                 </div>
               </div>
-              <!-- Chat message from user -->
-              <div class="flex items-start gap-2 justify-end">
-                <div class="flex-1 bg-primary-500 rounded-lg p-2.5 shadow-sm max-w-[85%]">
-                  <p class="text-xs text-white">{t('mockup.chat.user')}</p>
-                  <p class="text-[10px] text-primary-200 mt-1">10:35 AM</p>
+
+              <!-- File from user -->
+              <div>
+                <div class="flex items-center gap-1.5 mb-1.5">
+                  <svg class="w-3 h-3 text-neutral-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                  </svg>
+                  <span class="text-[10px] text-neutral-500">{t('mockup.files.fromYou')}</span>
                 </div>
-              </div>
-              <!-- Task notification -->
-              <div class="flex items-center gap-2 bg-green-50 rounded-lg p-2.5 border border-green-100">
-                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                </svg>
-                <p class="text-xs text-green-700">{t('mockup.chat.notification')}</p>
+                <div class="flex items-center gap-3 bg-white rounded-lg p-3 shadow-sm">
+                  <div class="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
+                    <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" />
+                    </svg>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-xs font-medium text-neutral-800 truncate">{t('mockup.files.receipts')}</p>
+                    <p class="text-[10px] text-neutral-400">10:28 AM</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
