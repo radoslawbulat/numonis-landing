@@ -68,7 +68,7 @@ const t = useTranslations(lang);
       </div>
 
       <!-- Right column: Animated Chat -->
-      <div class="animate-fade-in-up relative aspect-square max-w-md mx-auto lg:max-w-none lg:mx-0" style="animation-delay: 0.2s">
+      <div class="animate-fade-in-up relative aspect-square w-full max-w-md mx-auto lg:max-w-none lg:mx-0" style="animation-delay: 0.2s">
         <!-- Background image -->
         <div class="absolute inset-0 rounded-3xl overflow-hidden">
           <img
@@ -78,7 +78,7 @@ const t = useTranslations(lang);
           />
         </div>
         <!-- Chat overlay -->
-        <div class="absolute inset-0 m-10 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-4 border border-neutral-100 overflow-hidden flex flex-col">
+        <div class="absolute inset-0 m-4 sm:m-6 lg:m-10 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-4 border border-neutral-100 overflow-hidden flex flex-col">
           <!-- Chat header -->
           <div class="flex items-center gap-2 pb-2 border-b border-neutral-100 mb-2 flex-shrink-0">
             <div class="relative">
@@ -98,7 +98,7 @@ const t = useTranslations(lang);
           </div>
 
           <!-- Chat messages -->
-          <div class="space-y-2 flex-1 overflow-hidden" id="hero-chat">
+          <div class="space-y-2 flex-1 overflow-y-auto scrollbar-hide" id="hero-chat">
             <!-- Message 1: User -->
             <div class="chat-message opacity-0 flex justify-end" style="animation-delay: 0.5s">
               <div class="bg-primary-500 text-white rounded-xl rounded-br-sm px-3 py-1.5 max-w-[80%]">
@@ -184,6 +184,15 @@ const t = useTranslations(lang);
 </section>
 
 <style>
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
   .chat-message {
     animation: chatFadeIn 0.4s ease-out forwards;
   }
