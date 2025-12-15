@@ -24,6 +24,19 @@ export const ui = {
     'hero.scheduleDemo': 'Schedule a product demo',
     'hero.talkToExpert': 'Talk to an expert',
 
+    // Hero Chat
+    'hero.chat.accountantRole': 'Your Accountant',
+    'hero.chat.message1': 'Hi María, can I expense my home office setup?',
+    'hero.chat.message2': "Yes! You can claim desk, chair, and equipment. I see you uploaded receipts - I'll add them to your Q4 deductions.",
+    'hero.chat.message3': "That was fast! How's my tax position looking?",
+    'hero.chat.message4': "You're in great shape! With these deductions, you'll save around €2,400.",
+    'hero.chat.message5': 'Amazing, thank you!',
+    'hero.chat.chartTitle': 'Q4 Tax Savings Breakdown',
+    'hero.chat.homeOffice': 'Home Office',
+    'hero.chat.equipment': 'Equipment',
+    'hero.chat.software': 'Software',
+    'hero.chat.totalSavings': 'Total Savings',
+
     // Trusted By
     'trustedBy.title': 'Trusted by growing businesses across Spain',
 
@@ -191,6 +204,19 @@ export const ui = {
     'hero.peaceMind': 'Tranquilidad, impulsada por contadores expertos y tecnología de IA',
     'hero.scheduleDemo': 'Agenda una demo del producto',
     'hero.talkToExpert': 'Habla con un experto',
+
+    // Hero Chat
+    'hero.chat.accountantRole': 'Tu Contadora',
+    'hero.chat.message1': 'Hola María, ¿puedo deducir la configuración de mi oficina en casa?',
+    'hero.chat.message2': '¡Sí! Puedes reclamar escritorio, silla y equipos. Veo que subiste los recibos - los añadiré a tus deducciones del T4.',
+    'hero.chat.message3': '¡Qué rápido! ¿Cómo está mi situación fiscal?',
+    'hero.chat.message4': '¡Estás muy bien! Con estas deducciones, ahorrarás alrededor de €2.400.',
+    'hero.chat.message5': '¡Increíble, gracias!',
+    'hero.chat.chartTitle': 'Desglose de Ahorros Fiscales T4',
+    'hero.chat.homeOffice': 'Oficina Casa',
+    'hero.chat.equipment': 'Equipos',
+    'hero.chat.software': 'Software',
+    'hero.chat.totalSavings': 'Ahorro Total',
 
     // Trusted By
     'trustedBy.title': 'Empresas en crecimiento en España confían en nosotros',
